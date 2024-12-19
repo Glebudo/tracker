@@ -1,0 +1,7 @@
+train: D:/Трекер на обучение/tracker2_v1/train
+val: D:/Трекер на обучение/tracker2_v1/valid
+test: D:/Трекер на обучение/tracker2_v1/test
+
+
+nc: 12
+names: ['IFV', 'airplane', 'armored car', 'bus', 'car', 'civilian', 'fighter jet', 'helicopter', 'military truck', 'soldier', 'tank', 'truck']
