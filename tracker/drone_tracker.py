@@ -3,6 +3,7 @@ import torch
 import cv2
 import warnings
 import sys
+import os
 
 from pathlib import Path
 from dataclasses import dataclass 
@@ -28,7 +29,7 @@ class YoloConfig:
     
     model_type: ultralytics = YOLO #| RTDETR
     # model_path: str = r"D:\runs\tracker_vt4\weights\best.pt"
-    model_path: str = r"C:\Users\1nr_operator_24\Desktop\TrackerVT\Обученные модели\trackerVT_all_detector\weights\best.pt"
+    model_path: str = os.path.join("TrackerVT", "обученные модели", "weight", "tracker.pt")
     save_video: bool = True 
     saved_video_folder: str = r"output_videos"
     saved_video_name: str = r"output_video" 
@@ -61,7 +62,7 @@ class YoloTracker(YoloModel):
             """Кликаем на box, получаем его id"""
             if event == cv2.EVENT_LBUTTONDOWN:
                 boxes = results[0].boxes
-                xywh = boxes.xywh
+                xywh = boxes.xywhs
                 ids = boxes.id
 
                 for i in range(len(boxes)):                
