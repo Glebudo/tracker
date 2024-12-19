@@ -62,7 +62,7 @@ class YoloTracker(YoloModel):
             """Кликаем на box, получаем его id"""
             if event == cv2.EVENT_LBUTTONDOWN:
                 boxes = results[0].boxes
-                xywh = boxes.xywhs
+                xywh = boxes.xywh
                 ids = boxes.id
 
                 for i in range(len(boxes)):                
